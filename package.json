@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "Projeto de testes mobile com Appium, ADB e Jenkins",
   "scripts": {
-    "test": "echo \"Ambiente preparado para execução de testes mobile com Appium\""
+
+      "test": "wdio run ./wdio.conf.js"
   },
   "author": "Richard Marlon Balestrim",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@wdio/appium-service": "^9.29.1",
+    "@wdio/cli": "^9.29.1",
+    "@wdio/local-runner": "^9.29.1",
+    "@wdio/mocha-framework": "^9.29.1",
+    "@wdio/spec-reporter": "^9.29.1",
+    "appium-uiautomator2-driver": "^8.0.0"
+  }
 }

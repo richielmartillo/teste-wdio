@@ -22,4 +22,5 @@ cypress/screenshots/
 Thumbs.db
 
 # VS Code
-.vscode/
+.vscode/apps/*.apk
+apps/*.apk

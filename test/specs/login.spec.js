@@ -1,0 +1,32 @@
+import loginPage from "../pageobjects/login.page";
+
+describe('Funcionalidade: Login', () => {
+
+    beforeEach(async () => {
+        await driver.reloadSession()
+        await loginPage.abrirMenu()
+    })
+
+    it('Deve fazer login com sucesso', async () => {
+        await loginPage.preencherLogin('richard@teste.com', 'senha@123')
+
+        expect(await loginPage.mensagemAlerta()).toEqual('You are logged in!')
+
+        // await driver.acceptAlert()
+    });
+
+    it('Deve falhar ao fazer login com email inválido', async () => {
+        await loginPage.preencherLogin('teste@teste', 'senha@123')
+
+        await loginPage.mensagemErro('Please enter a valid email address')
+    });
+
+    it('Deve falhar ao fazer login com senha inválida', async () => {
+        //Please enter at least 8 characters
+        await loginPage.preencherLogin('teste@teste.com', '1234')
+
+        await loginPage.mensagemErro('Please enter at least 8 characters')
+
+    })
+
+});
