@@ -24,3 +24,6 @@ Thumbs.db
 # VS Code
 .vscode/apps/*.apk
 apps/*.apk
+
+app/
+chromedriver-mobile/
