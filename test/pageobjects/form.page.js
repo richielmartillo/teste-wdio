@@ -16,21 +16,18 @@ class FormPage {
         return $('-android uiautomator:new UiSelector().resourceId("text_input")')
     }
 
-    get opcao() {
-        return $('-android uiautomator:new UiSelector().text("This app is awesome")')
-    }
 
-    async selecionarOpcao() {
-        //Melhorar este método
+
+    async selecionarOpcao(txtOpcao) {
+
         await this.dropdown.click()
-        await this.opcao.click()
+        const opcao = $(`-android uiautomator:new UiSelector().text("${txtOpcao}")`)
+        await opcao.click()
     }
 
     async validarOpcao() {
         return await this.dropdown.getText()
     }
-
-
 
     // Métodos
     async abrirFormulario() {

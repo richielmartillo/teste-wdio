@@ -7,12 +7,16 @@ describe('Funcionalidade: Login', () => {
         await loginPage.abrirMenu()
     })
 
+
+    afterEach(async () => {
+        await browser.relaunchActiveApp()
+    });
+
+
     it('Deve fazer login com sucesso', async () => {
         await loginPage.preencherLogin('richard@teste.com', 'senha@123')
-
         expect(await loginPage.mensagemAlerta()).toEqual('You are logged in!')
 
-        // await driver.acceptAlert()
     });
 
     it('Deve falhar ao fazer login com email inválido', async () => {
