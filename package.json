@@ -2,10 +2,10 @@
   "name": "modulo-25-testes-mobile-appium",
   "version": "1.0.0",
   "description": "Projeto de testes mobile com Appium, ADB e Jenkins",
-  "scripts": {
-
-      "test": "wdio run ./wdio.conf.js"
-  },
+"scripts": {
+  "test": "wdio run ./config/wdio.android.conf.js",
+  "wdio:android": "wdio run ./config/wdio.android.conf.js"
+},
   "author": "Richard Marlon Balestrim",
   "license": "MIT",
   "devDependencies": {

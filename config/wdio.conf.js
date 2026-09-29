@@ -50,27 +50,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [
-        // {
-        //     // configurações para aplicação hibrida
-        //     platformName: 'Android',
-        //     browserName: 'Chrome',
-        //     'appium:deviceName': 'android-11-api30-wdio',
-        //     'appium:platformVersion': '11.0',
-        //     'appium:automationName': 'UiAutomator2',
-        //     'appium:chromedriverAutodownload': true,
-        //     'appium:chromedriverExecutable': 'chromedriver-mobile/chromedriver.exe'
-        // },
 
-        {
-            "platformName": "Android",
-            "appium:automationName": "UiAutomator2",
-            "appium:deviceName": "Primeiro_emulador",
-            "appium:platformVersion": "13.0",
-            "appium:app": "./apps/native-demo-app.apk"
-        }
-
-    ],
 
     //
     // ===================
