@@ -1,11 +1,13 @@
+import formPage from '../pageobjects/form.page.js'
+
 it('Deve trocar o botão de on para off', async () => {
-    const botaoOnOff = await $('~switch')
+    await formPage.abrirFormulario()
 
     // Troca para ON
-    await botaoOnOff.click()
-    await driver.pause(2000)
+    await formPage.alternarBotaoOnOff()
+    await expect(formPage.botaoOnOff).toHaveAttribute('checked', 'true')
 
     // Troca novamente para OFF
-    await botaoOnOff.click()
-    await driver.pause(2000)
+    await formPage.alternarBotaoOnOff()
+    await expect(formPage.botaoOnOff).toHaveAttribute('checked', 'false')
 })

@@ -3,6 +3,8 @@ import { config as shared } from './wdio.conf.js'
 export const config = {
     ...shared,
 
+    maxInstances: 1,
+
     specs: [
         '../test/specs/**/*.js'
     ],

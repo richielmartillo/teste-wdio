@@ -4,6 +4,10 @@ class FormPage {
         return $('~Forms')
     }
 
+    get botaoOnOff() {
+        return $('~switch')
+    }
+
     get campoTexto() {
         return $('~text-input')
     }
@@ -31,7 +35,13 @@ class FormPage {
 
     // Métodos
     async abrirFormulario() {
+        await this.menuForm.waitForDisplayed()
         await this.menuForm.click()
+    }
+
+    async alternarBotaoOnOff() {
+        await this.botaoOnOff.waitForDisplayed()
+        await this.botaoOnOff.click()
     }
 
     async preencherTexto(texto) {
